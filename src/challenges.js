@@ -63,20 +63,13 @@ function filterOut(originalArray, toRemoveArray) {
   }
   let filterOutArray = [];
   for (let i = 0; i < originalArray.length; i++) {
-    let shouldRemove = false;
-    for (let j = 0; j < toRemoveArray.length; j++) {
-      if (originalArray[i] === toRemoveArray[j]) {
-        shouldRemove = true;
-        break;
-      }
-    }
-    if (!shouldRemove) {
+    if (!toRemoveArray.includes(originalArray[i])) {
       filterOutArray.push(originalArray[i]);
     }
   }
-  console.log(filterOutArray);
   return filterOutArray;
 }
+
 filterOut(original, toRemove);
 
 // Iteration 5 | Unique Arrays
@@ -110,10 +103,8 @@ function uniquifyArray(originalArray) {
       filterOutArray.push(originalArray[i]);
     }
   }
-  console.log(filterOutArray);
   return filterOutArray;
 }
-uniquifyArray(duplicateWords);
 
 // Bonus: Iteration 6 | Product of Adjacent Numbers
 const matrix = [
