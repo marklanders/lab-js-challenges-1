@@ -184,16 +184,9 @@ function greatestProduct(matrix) {
   let greatestProduct = 0;
   // Check horizontal products
   for (let i = 0; i < matrix.length; i++) {
-    console.log("checking row", i);
     for (let j = 0; j <= matrix[i].length - 4; j++) {
-      console.log("checking col", j);
       let horizontalProduct =
         matrix[i][j] * matrix[i][j + 1] * matrix[i][j + 2] * matrix[i][j + 3];
-      console.log(
-        `Checking horizontal at row ${i}, cols ${j}-${
-          j + 3
-        }: ${horizontalProduct}`
-      );
 
       if (horizontalProduct > greatestProduct) {
         greatestProduct = horizontalProduct;
@@ -202,20 +195,14 @@ function greatestProduct(matrix) {
   }
   // Check vertical products
   for (let i = 0; i <= matrix.length - 4; i++) {
-    console.log("checking col", i);
     for (let j = 0; j < matrix[i].length; j++) {
-      console.log("checking row", j);
       let verticalProduct =
         matrix[i][j] * matrix[i + 1][j] * matrix[i + 2][j] * matrix[i + 3][j];
-      console.log(
-        `Checking vertical at col ${j}, rows ${i}-${i + 3}: ${verticalProduct}`
-      );
       if (verticalProduct > greatestProduct) {
         greatestProduct = verticalProduct;
       }
     }
   }
-  console.log(greatestProduct);
   return greatestProduct;
 }
 greatestProduct(matrix);
