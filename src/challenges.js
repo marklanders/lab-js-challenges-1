@@ -56,7 +56,7 @@ const original = ["cat", "dog", "fish", "bird", "cat", "fish"];
 const toRemove = ["cat", "dog"];
 
 function filterOut(originalArray, toRemoveArray) {
-  if (originalArray.length === 0) {
+  if (!originalArray.length) {
     return null;
   } else if (toRemoveArray.length === 0) {
     return originalArray;
@@ -78,6 +78,7 @@ function filterOut(originalArray, toRemoveArray) {
   return filterOutArray;
 }
 filterOut(original, toRemove);
+
 // Iteration 5 | Unique Arrays
 const duplicateWords = [
   "crab",
